@@ -6,7 +6,7 @@ Group: K4113c
 Author: Iumadilova Angela\
 Lab: Lab1  
 Date of create: 04.11.2023  
-Date of finished: 07.11.2023
+Date of finished: 08.11.2023
 
 
 ## Установка Docker и Minikube, мой первый манифест
