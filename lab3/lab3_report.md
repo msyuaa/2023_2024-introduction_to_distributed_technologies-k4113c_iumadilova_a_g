@@ -1,12 +1,12 @@
-University: [ITMO University](https://itmo.ru/ru/) 
-Faculty: [FICT](https://fict.itmo.ru) 
-Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies) 
-Year: 2023/2024 
-Group: K4113c 
-Author: Petrov Aleksandr Denisovich 
-Lab: Lab3
-Date of create: 06.11.2023 
-Date of finished: to be added
+University: [ITMO University](https://itmo.ru/ru/)  
+Faculty: [FICT](https://fict.itmo.ru)  
+Course: [Introduction to distributed technologies](https://github.com/itmo-ict-faculty/introduction-to-distributed-technologies)  
+Year: 2023/2024  
+Group: K4113c  
+Author: Iumadilova Angela\
+Lab: Lab2 
+Date of create: 20.11.2023  
+Date of finished: 21.11.2023
 ___
 # Отчёт о лабораторной работе №3
 
@@ -110,10 +110,10 @@ You can view the list of minikube maintainers at: https://github.com/kubernetes/
 ```
 Сгенерируем TLS сертификат и импортируем его в minikube, добавив также в Ingress:
 ```bash
-openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out lab3.crt -keyout lab3.key
+$ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 5 -nodes -out lab3.crt -keyout
 
-$ kubectl create secret tls tls-secret --cert=lab3.crt --key=lab3.key
-secret/tls-secret created
+$ kubectl create secret tls secret-tls --key="lab3.key" --cert="lab3.crt"
+secret/secret-tls created
 ```
 Теперь можно создать манифест для Ingress, указав в нём FQDN и TLS-сертификат. Также указываем сервис, который мы создали для доступа в реплику:
 ```yml
@@ -150,11 +150,11 @@ ingress.networking.k8s.io/lab3-ingress created
 Прописываем в hosts (C:\Windows\System32\Drivers\etc\hosts) FQDN и IP адрес : 127.0.0.1 lab3.local
 
 Теперь, вбивая в браузере наше FQDN, мы попадаем в веб-приложение. Подключение при этом производится по протоколу HTTPS:
+![image1](https://github.com/msyuaa/2023_2024-introduction_to_distributed_technologies-k4113c_iumadilova_a_g/assets/97636484/9514b570-f376-4514-850e-af9f8f9e5e9f)
 
 
 Убедимся, что выдаётся наш сертификат:
-
-
+![image2](https://github.com/msyuaa/2023_2024-introduction_to_distributed_technologies-k4113c_iumadilova_a_g/assets/97636484/c4b47b55-ff56-46a2-ab63-2a12c8633a97)
 
 Таким образом, нам удалось настроить Ingress на работу с созданным нами сервисом, используя FQDN и TLS-сертификат. 
 
