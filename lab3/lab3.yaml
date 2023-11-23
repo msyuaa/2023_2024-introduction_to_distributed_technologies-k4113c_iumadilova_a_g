@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmaplab3
+data:
+  REACT_APP_USERNAME: Angela
+  REACT_APP_COMPANY_NAME: ITMO
+
+---
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: lab3replica
+  labels:
+    app: lab3
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: lab3
+  template:
+    metadata:
+      labels:
+        app: lab3
+    spec:
+      containers:
+      - name: lab3
+        image: ifilyaninitmo/itdt-contained-frontend:master
+        env:
+        - name: REACT_APP_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: configmaplab3
+              key: REACT_APP_USERNAME
+        - name: REACT_APP_COMPANY_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: configmaplab3
+              key: REACT_APP_COMPANY_NAME
+        ports:
+        - containerPort:  3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab3replica
+spec:
+  type: NodePort
+  selector:
+    app: lab3
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
