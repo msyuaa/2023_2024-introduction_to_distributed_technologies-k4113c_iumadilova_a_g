@@ -160,4 +160,5 @@ ingress.networking.k8s.io/lab3-ingress created
 
 ### Схема организации контейнеров и сервисов
 
+![scheme](https://github.com/msyuaa/2023_2024-introduction_to_distributed_technologies-k4113c_iumadilova_a_g/assets/97636484/e6be2f7b-d72c-4212-b314-7537c7da6242)
 
