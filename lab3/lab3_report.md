@@ -4,9 +4,9 @@ Course: [Introduction to distributed technologies](https://github.com/itmo-ict-f
 Year: 2023/2024  
 Group: K4113c  
 Author: Iumadilova Angela\
-Lab: Lab2 
-Date of create: 20.11.2023  
-Date of finished: 21.11.2023
+Lab: Lab3 
+Date of create: 21.11.2023  
+Date of finished: 23.11.2023
 ___
 # Отчёт о лабораторной работе №3
 
