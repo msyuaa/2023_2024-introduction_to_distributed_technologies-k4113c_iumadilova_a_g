@@ -117,7 +117,7 @@ Successfully applied 2 'IPPool' resource(s)
 $ kubectl calico get ippool -o wide --allow-version-mismatch
 NAME         CIDR          NAT    IPIPMODE   VXLANMODE   DISABLED   DISABLEBGPEXPORT   SELECTOR       
 rack1-pool   10.0.0.0/24   true   Always     Never       false      false              rack == "c1"
-rack2-pool   10.0.1.0/24   true   Always     Never       false      false              rack == "c2"
+rack2-pool   10.244.2.0/24   true   Always     Never       false      false              rack == "c2"
 ```
 Создадим манифест для Deployment с необходимыми переменными окружения (лаб3): 
 ```yaml
