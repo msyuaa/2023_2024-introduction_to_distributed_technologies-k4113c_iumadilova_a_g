@@ -220,4 +220,5 @@ ___
 
 ### Схема
 
+![image](https://github.com/msyuaa/2023_2024-introduction_to_distributed_technologies-k4113c_iumadilova_a_g/assets/97636484/c9c7912b-8866-4168-8d35-90218e7fa50a)
 
