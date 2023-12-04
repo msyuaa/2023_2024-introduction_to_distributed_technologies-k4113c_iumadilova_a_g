@@ -103,7 +103,7 @@ kind: IPPool
 metadata:
   name: rack2-pool
 spec:
-  cidr: 10.0.1.0/24
+  cidr: 10.244.2.0/24
   ipipMode: Always
   natOutgoing: true
   nodeSelector: rack == "c2"
@@ -124,7 +124,7 @@ rack2-pool   10.244.2.0/24   true   Always     Never       false      false     
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configmaplab3
+  name: configmaplab4
 data:
   REACT_APP_USERNAME: Angela
   REACT_APP_COMPANY_NAME: ITMO
@@ -134,7 +134,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lab4replica
+  name: lab4
   labels:
     app: lab4
 spec:
@@ -154,12 +154,12 @@ spec:
         - name: REACT_APP_USERNAME
           valueFrom:
             configMapKeyRef:
-              name: configmaplab3
+              name: configmaplab4
               key: REACT_APP_USERNAME
         - name: REACT_APP_COMPANY_NAME
           valueFrom:
             configMapKeyRef:
-              name: configmaplab3
+              name: configmaplab4
               key: REACT_APP_COMPANY_NAME
         ports:
         - containerPort:  3000
