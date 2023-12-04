@@ -198,7 +198,8 @@ Forwarding from [::1]:3000 -> 3000
 ```bash
 $ kubectl get pods -o wide
 NAME                    READY   STATUS    RESTARTS   AGE    IP           NODE           NOMINATED NODE   READINESS GATES
-lab4-6d7647697c-ft8cq   1/1     Running   0          102s   10.244.2.0   minikube-m02   <none>           <none>lab4-6d7647697c-jhwqf   1/1     Running   0          102s   10.0.0.65    minikube       <none>           <none>
+lab4-6d7647697c-ft8cq   1/1     Running   0          102s   10.244.2.0   minikube-m02   <none>           <none>
+lab4-6d7647697c-jhwqf   1/1     Running   0          102s   10.0.0.65    minikube       <none>           <none>
 ```
 Зайдем в один из контейнеров и пропингуем другой:
 ```bash
